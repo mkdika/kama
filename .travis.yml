@@ -3,3 +3,10 @@ jdk: oraclejdk8
 
 script:
   - ./mvnw clean install -B
+  - ./mvnw clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
+
+addons:
+  sonarcloud:
+    organization: "namas-tech"
+    token:
+      secure: "XtOVnOWldndZl5On383Q6UGLpSVzkBkl5nRitS87CL5P+pnh74KhU1X4C5F9vUMP60mH9nscT3bi5S2729VbWO/sRZZRleH9ZU+8pYvQZMWvhyOJBlRTlzYlA82vjD1Gfhir4V/3KrAszvPPmPMsidECMWGQx0CL7Pe/3/Kk8dKqZ+xJQfp7ABA60S7hYKwNQ0PhdbbE0Iaxn/gon4J7m8/ZJIigkSiqVowHTWipDAtU2zXqLAwguNnXLWSmkR9t0FbsDRE1rxTQbYo2ltZzxr4ooq2AXRv1nbmgLgkpoVgXEHkwuK/suI53GdiVJ25gpeiuAF+d1zOx/MdDbD94OxMRJ1t40nFWHZSdnvYIpKSmLhgxURS90Ao2CYQzAvUCXESw+TI/8i6yvU7d5KNpe1/1T3++HN3AJvb1umbOE5XBhLgFABu1mGUxl9Xk7m4R4edarrdeOeEe5rD5Vc2SIjPPrz6YBD5Eb16pIAi6+8SNAox1udZLAfqgeKiUUyC9FE7bWuPnlfpTemuitRHKKT5KuGIXQtmnJCKu1YK3PzugXQVcLf66Ujj/NHgJFycLBesAN8IID/HiKHb+v0cyZ9jf/ZhRm2uvAjjW4WGU10BT280t2m4XVOKQUehWmac9FJ+/E2UNVezY9Gpr6Jhsk120K6ajPlbntH4vbS6wW4Y="
